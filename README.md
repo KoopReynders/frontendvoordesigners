@@ -8,7 +8,7 @@ Het vak bestaat uit 3 opdrachten:
 2. [Opdracht 2](opdracht2/)
 3. [Opdracht 3](opdracht3/)
 
-Hier de url van het vak: https://koopreynders.github.io/frontendvoordesigners/
+Hier de [url](https://koopreynders.github.io/frontendvoordesigners/) met de opdrachten. 
 
 ---
 - [Markup cheat sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
