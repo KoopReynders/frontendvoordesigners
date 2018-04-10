@@ -1,16 +1,12 @@
 
-
-
-
-
 //script.js
 //console.log(this);
 //var uri = "https://api.data.amsterdam.nl/panorama/recente_opnames/2018/?format=json";
 //var uri = "https://open.data.amsterdam.nl/Attracties.json";
 //var uri = "https://open.data.amsterdam.nl/Activiteiten.json";
 //var uri = "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json";
-var uri = "http://dennistel.nl/movies";
-
+//var uri = "http://dennistel.nl/movies"; //online, geen https
+var uri = 'https://koopreynders.github.io/frontendvoordesigners/opdracht3/json/movies.json'; //json file op github
 var button = document.querySelector("button");
 var loaderElement = document.querySelector("span");
 var section = document.querySelector('section');
