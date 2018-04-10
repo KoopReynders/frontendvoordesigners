@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+body{
+  margin:1em;
+  font: 2em/1 helvetica;
+}
+span{
+  color: green;
+  margin: 0;
+  padding: 1em;
+  width: calc(6 * 450px);
+  list-style-position: inside;
+  background: DARKSEAGREEN;
+  transition: all 1s ease;
+  display: none;
+}
+.show{
+  display: inline;
+}
+.hide{
+  display: none;
+}
+
+/* ************* */
+section ul{
+  display: none;
+  padding: 0;
+  background: pink;
+}
