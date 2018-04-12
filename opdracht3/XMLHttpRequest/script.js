@@ -35,7 +35,7 @@ function showData(jsonObj) {
     var genres = films[i].genres;
     for (var n = 0; n < genres.length; n++) {
       console.log("genre: ",genres[n]);
-    } //for: genres
+    } //end for genres
 
     //REVIEWS
     var reviewslezen = document.createElement('ul');
@@ -47,7 +47,25 @@ function showData(jsonObj) {
       var listItem = document.createElement('li');
       listItem.textContent = reviews[j].score + ' - ' + reviews[j].created_at;
       reviewslezen.appendChild(listItem);
-    } //for: films
+    } //end: for reviews
+
+
+    //functies om elementen toe te voegen
+    reviewsheader.nr = i; //zo kun je een variabele aanmaken in ene object om iets te 'bewaren', bijvoorbeel een verwijzing naar een ander element
+    reviewsheader.onclick = function(){
+      console.log("click this = " + this.nr, this); //met this, verwijs je naar het object zelf waar de functie wordt uitgevoerd, hier gebruik ik de variabale die in in het object heb aangemaakt
+      console.log("parentNode",this.parentNode);
+      var reviews = this.parentNode.querySelector('ul'); //relatief pad gebruiken voor een actie die moet plaatsvinden
+      reviews.classList.toggle('show')
+    } //end: reviewsheader onClick
+    reviewslezen.addEventListener("click", function(){
+      console.log("click this", this);
+      console.log("parentNode",this.parentNode); //met 'parentNode' kun je een element met een relatief pad bereiken
+      console.log("childNodes",this.childNodes); //met 'childNodes' kun je de kinderen van een element met een relatief pad bereiken
+    }); //end: reviewslezen click
+
+
+
 
     //ALLE DATA KOPPELEN
     filmpiekijken.appendChild(filmtitel);
@@ -59,19 +77,11 @@ function showData(jsonObj) {
     //HTML INJECTION IN BESTAANDE SECTION
     section.appendChild(filmpiekijken);
 
-    //functies om elementen toe te voegen
-    reviewsheader.nr = i;
-    reviewsheader.onclick = function(){
-      console.log("click this = " + this.nr, this);
-      console.log(this.parentNode);
-      var reviews = this.parentNode.querySelector('ul');
-      console.log(reviews);
-      reviews.classList.toggle('show');
-    }
 
 
-  }//for: films
-}
+
+  } //end: for films
+} //end: function showData
 
 //https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
 //https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest
