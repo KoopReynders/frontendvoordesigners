@@ -39,8 +39,8 @@ function showData(jsonObj) {
 
     //REVIEWS
     var reviewslezen = document.createElement('ul');
-    var reviewsheader = document.createElement('button');
-      reviewsheader.textContent = "Lees reviews";
+    var reviewsbutton = document.createElement('button');
+      reviewsbutton.textContent = "Lees reviews";
     //reviewslezen.appendChild(reviewsheader);
     var reviews = films[i].reviews;
     for (var j = 0; j < reviews.length; j++) {
@@ -51,17 +51,18 @@ function showData(jsonObj) {
 
 
     //functies om elementen toe te voegen
-    reviewsheader.nr = i; //zo kun je een variabele aanmaken in ene object om iets te 'bewaren', bijvoorbeel een verwijzing naar een ander element
-    reviewsheader.onclick = function(){
-      console.log("click this = " + this.nr, this); //met this, verwijs je naar het object zelf waar de functie wordt uitgevoerd, hier gebruik ik de variabale die in in het object heb aangemaakt
-      console.log("parentNode",this.parentNode);
-      var reviews = this.parentNode.querySelector('ul'); //relatief pad gebruiken voor een actie die moet plaatsvinden
-      reviews.classList.toggle('show')
+    reviewsbutton.info = reviewslezen; //zo kun je een variabele aanmaken in ene object om iets te 'bewaren', bijvoorbeel een verwijzing naar een ander element
+    reviewsbutton.onclick = function(){
+      console.log("click this =" + this.info, this); //met this, verwijs je naar het object zelf waar de functie wordt uitgevoerd, hier gebruik ik de variabale die in in het object heb aangemaakt
+      //console.log("parentNode",this.parentNode);
+      this.info.classList.toggle('show')
     } //end: reviewsheader onClick
     reviewslezen.addEventListener("click", function(){
-      console.log("click this", this);
-      console.log("parentNode",this.parentNode); //met 'parentNode' kun je een element met een relatief pad bereiken
-      console.log("childNodes",this.childNodes); //met 'childNodes' kun je de kinderen van een element met een relatief pad bereiken
+      console.log("click this =", this);
+      console.log("Wat is de parentNode?",this.parentNode); //met 'parentNode' kun je een element met een relatief pad bereiken
+      console.log("Wat zijn de childNodes?",this.childNodes); //met 'childNodes' kun je de kinderen van een element met een relatief pad bereiken
+      var button = this.parentNode.querySelector('button'); //relatief pad gebruiken voor een actie die moet plaatsvinden
+      console.log("Is dit de button?",button);
     }); //end: reviewslezen click
 
 
@@ -71,7 +72,7 @@ function showData(jsonObj) {
     filmpiekijken.appendChild(filmtitel);
     filmpiekijken.appendChild(filmplot);
     filmpiekijken.appendChild(filmcover);
-    filmpiekijken.appendChild(reviewsheader);
+    filmpiekijken.appendChild(reviewsbutton);
     filmpiekijken.appendChild(reviewslezen);
 
     //HTML INJECTION IN BESTAANDE SECTION
