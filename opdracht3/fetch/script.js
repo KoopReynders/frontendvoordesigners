@@ -4,7 +4,8 @@
 //var uri = "https://open.data.amsterdam.nl/Attracties.json";
 //var uri = "https://open.data.amsterdam.nl/Activiteiten.json";
 //var uri = "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json";
-var uri = "http://dennistel.nl/movies";
+//var uri = "http://dennistel.nl/movies";
+var uri = "https://koopreynders.github.io/frontendvoordesigners/opdracht3/json/movies.json";
 
 var section = document.querySelector('section');
 var button = document.querySelector("button");
@@ -91,8 +92,7 @@ function loadRestApiFetch(){ //Rest Api call met Fetchs
   console.log("function loadRestApiFetch");
 
   loaderElement.classList.add('show');
-  fetch(uri)
-    .then(function(response) {
+  fetch(uri).then(function(response) {
       console.log(response.headers.get('Content-Type'));
       console.log(response.headers.get('Date'));
 
@@ -102,16 +102,14 @@ function loadRestApiFetch(){ //Rest Api call met Fetchs
       console.log(response.url);
 
       return response.json();
-    })
-    .then(function(myJson) {
+    }).then(function(myJson) {
       console.log('Request successful', myJson);
       //eerst de loader weg halen !
       loaderElement.classList.remove('show');
       //dan de html renderen
       //document.querySelector("p").innerHTML="joehoe";
       //console.log(myJson);
-    })
-    .catch(function(error) {
+    }).catch(function(error) {
       console.log('Request failed', error)
     });
 }
