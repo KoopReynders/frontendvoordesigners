@@ -51,7 +51,7 @@
                 "id":6,"actor_name":"Bruce Campbell",
                 "movie_id":1,
                 "character":"Ashley 'Ash' J. Williams",
-                "url_character":"https://www.imdb.com/character/ch0003609",
+                "url_character":"https://www.imdb.com/title/tt1288558/characters/nm0132257",
                 "url_photo":"https://m.media-amazon.com/images/M/MV5BOTY2MTg0OTEzOV5BMl5BanBnXkFtZTgwNzQ3NTcwMjE@._V1_SY1000_CR0,0,666,1000_AL_.jpg",
                 "url_profile":"https://www.imdb.com/name/nm0132257/"
             },{
@@ -172,7 +172,7 @@
             "movie_id":2,
             "character":"Tommy",
             "url_character":"http://www.imdb.com/character/ch0001392",
-            "url_photo":"http://ia.media-imdb.com/images/M/MV5BMjA1MDQxMDU4Nl5BMl5BanBnXkFtZTcwMTA2MTE3Mw@@._V1_SY44_CR11,0,32,44_AL_.jpg",\
+            "url_photo":"http://ia.media-imdb.com/images/M/MV5BMjA1MDQxMDU4Nl5BMl5BanBnXkFtZTcwMTA2MTE3Mw@@._V1_SY44_CR11,0,32,44_AL_.jpg",
             "url_profile":"http://www.imdb.com/name/nm0004743"
           },{
             "id":16,
