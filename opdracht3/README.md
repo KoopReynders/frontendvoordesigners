@@ -13,7 +13,7 @@ De JSON data is ook los, per film of genre of actors te gebruiken. Check die [hi
 ## Voorbeeld
 
 Dit is een voorbeeld van het laden van data en er html mee maken:
-[Code demo](https://github.com/KoopReynders/frontendvoordesigners/blob/master/opdracht3/XMLHttpRequest/index.html)
+[Code demo](https://koopreynders.github.io/frontendvoordesigners/opdracht3/XMLHttpRequest/)
 
 Dit is een voorbeeld van het laden van de film data:
-[Code demo](https://github.com/KoopReynders/frontendvoordesigners/blob/master/opdracht3/v1/index.html)
+[Code demo](https://koopreynders.github.io/frontendvoordesigners/opdracht3/v1/)
