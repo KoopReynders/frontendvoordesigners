@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Muzieknummers volgorde</title>
+    <link href="index.css" type="text/css" rel="stylesheet">
+
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+
+    </script>
+</head>
+
+<!--<body>-->
+<!--
+    <main>
+        <h1>EDENs Discography</h1>
+        <div class="container" ondragover="allowDrop(event)" ondrop="drop(event)">
+            <img class="draggable" src="images/nocturne.jpg" alt="Nocturne" draggable="true" ondragover="drag(event)">
+        </div>
+
+        <div class="container" ondragover="allowDrop(event)" ondrop="drop(event)">
+            <img class="draggable" src="images/gravity.jpg" alt="Gravity" draggable="true" ondragover="drag(event)">
+        </div>
+
+        <div class="container"><img class="draggable" src="images/wakeUp.jpeg" alt="Wake Up" draggable="true" ondragstart="drag(event)"></div>
+        <div class="container"><img class="draggable" src="images/startEnd.jpg" alt="Start//End" draggable="true" ondragstart="drag(event)"></div>
+        <div class="container"><img class="draggable" src="images/circles.jpg" alt="Circles" draggable="true" ondragstart="drag(event)"></div>
+        <div class="container"><img class="draggable" src="images/entrance.jpg" alt="Entrance" draggable="true" ondragstart="drag(event)"></div>
+        <div class="container"><img class="draggable" src="images/ITYTTMOM.jpg" alt="ITYTTMOM" draggable="true" ondragstart="drag(event)"></div>
+        <div class="container"><img class="draggable" src="images/timesLikeThese.jpg" alt="Times Like These" draggable="true" ondragstart="drag(event)"></div>
+        <div class="container"><img class="draggable" src="images/drugs.jpg" alt="Drugs" draggable="true" ondragstart="drag(event)"></div>
+        <div class="container"><img class="draggable" src="images/endCredits.jpg" alt="End Credits" draggable="true" ondragstart="drag(event)"></div>
+
+    </main>
+-->
+
+<!--    <script src="index.js"></script>-->
+<!--    TODO: flexbox gebruiken in de main, alles moet responsive zijn op laptop op browser naar keuze-->
+<!--</body>-->
+
+<body>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <img id="drag1" src="images/drugs.jpg" draggable="true" ondragstart="drag(event)" width="336" height="200" alt="1">
+
+    <img id="drag1" src="images/circles.jpg" draggable="true" ondragstart="drag(event)" width="336" height="200" alt="2">
+
+</body>
+
+</html>
