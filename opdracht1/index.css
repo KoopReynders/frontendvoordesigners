@@ -1,0 +1,44 @@
+body {
+    background-color: #2B2829;
+    overflow: hidden;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+main h1 {
+    color: white;
+    font-family: arial;
+    font-size: 30px;
+    margin: 10px 0px 10px 0px;
+    text-align: center;
+    width: 95%;
+}
+
+main img {
+    margin: 20px;
+    display: block;
+    width: 250px;
+    height: 250px;
+}
+
+main img:hover {
+    cursor: grab;
+}
+
+.baseDnD {
+    transform: scale(0.8);
+    opacity: 0.5;
+}
+
+.endDnD {
+    transform: scale(1.1);
+}
