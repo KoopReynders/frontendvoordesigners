@@ -1,0 +1,73 @@
+*:focus {
+    outline: none;
+}
+
+body {
+    background-color: #2B2829;
+    overflow: hidden;
+    margin: 0px;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+main h1 {
+    color: white;
+    font-family: arial;
+    font-size: 30px;
+    margin: 10px 0px 10px 0px;
+    text-align: center;
+    width: 95%;
+}
+
+main div {
+    margin: 20px;
+    display: block;
+    width: 250px;
+    height: 253px;
+    background-color: #F1F3F4;
+}
+
+main div h2 {
+    padding-top: 5px;
+    color: black;
+    font-family: arial;
+    font-size: 20px;
+    margin: 0px;
+    text-align: center
+}
+
+main div img {
+    width: 250px;
+    height: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main img:hover {
+    cursor: grab;
+}
+
+main div audio {
+    width: 250px;
+    height: 30px;
+    background-color: #F1F3F4;
+}
+
+.baseDnD {
+    transform: scale(0.8);
+    opacity: 0.5;
+}
+
+.endDnD {
+    transform: scale(1.1);
+}
