@@ -3,6 +3,8 @@
 var section = document.querySelector('section');
 var button = document.querySelector('button');
 var requestURL = 'data.html';
+var requestURL = 'https://koopreynders.github.io/frontendvoordesigners/opdracht3/PE/data.html';
+
 
 button.addEventListener('click',function(){
   // console.log('click');
