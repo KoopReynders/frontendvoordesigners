@@ -4,6 +4,8 @@ var section = document.querySelector('section');
 var button = document.querySelector('button');
 //var requestURL = 'data.html';
 var requestURL = 'https://koopreynders.github.io/frontendvoordesigners/opdracht3/PE/data.html';
+var requestURL = 'https://koopreynders.github.io/frontendvoordesigners/opdracht3/PE/data2.html';
+
 
 //button actie; onclick load file en onload render naar section
 button.addEventListener('click',function(){
