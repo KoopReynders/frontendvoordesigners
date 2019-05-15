@@ -1,0 +1,24 @@
+h1{
+  color: grey;
+  font: normal small-caps normal 2em/1.4 Georgia;
+  margin: 1em;
+}
+button{
+  margin: 2em 3em;
+  padding: 1em;
+}
+
+section {
+  max-width: 28em;
+  border-radius: 1em;
+  padding: 1em;
+  margin: 1em;
+  box-shadow: 3px 3px 3px 3px #ccc;
+}
+section h1{
+  font: normal 2em/1.4 helvetica;
+  color: black;
+}
+section p{
+  color: black;
+}

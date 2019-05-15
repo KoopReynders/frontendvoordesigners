@@ -5,6 +5,7 @@ var button = document.querySelector('button');
 //var requestURL = 'data.html';
 var requestURL = 'https://koopreynders.github.io/frontendvoordesigners/opdracht3/PE/data.html';
 
+//button actie; onclick load file en onload render naar section
 button.addEventListener('click',function(){
   section.textContent = "load data";
   // console.log('click');
@@ -20,4 +21,4 @@ button.addEventListener('click',function(){
     section.innerHTML = data;
   } //end request.onload
 
-}) //end button.addEventListener
+}) //end button clicks
