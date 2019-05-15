@@ -1,12 +1,14 @@
-// console.log("script");
-
+/*
+  variabelen:
+*/
 // var dataURL = 'https://koopreynders.github.io/frontendvoordesigners/opdracht3/PE/data.html';
 // var dataURL = 'https://koopreynders.github.io/frontendvoordesigners/opdracht3/PE/data2.html';
 var section = document.querySelector('section'); //section om de html in te laden
 var form = document.querySelector("form"); //formulier met file selectie
 
 /*
-  functie om de data te laden en op de pagina te tonen
+  Loaddata functie
+  Functie om de data te laden en op de pagina te tonen
   arg: het data file dat geladen meot worden
 */
 function loaddata(dataURL){
@@ -28,13 +30,11 @@ function loaddata(dataURL){
 
 /*
   Submit functie
+  Wordt uitgevoerd als op de submit button wordt geklikt
 */
 form.addEventListener("submit", function(event) {
-  // console.log("addEventListener",event);
   var link = form.elements['link'].value; //geselecteerde value uit het form fixen
-  console.log("form input value",link);
   loaddata(link); //
 
   event.preventDefault(); //dus niet het formulier echt versturen met de submit button
-
 }, false); //end form.addEventListener submit
