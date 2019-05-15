@@ -1,15 +1,25 @@
-/* h1{
-  color: grey;
-  font: normal small-caps normal 2em/1.4 Georgia;
-  margin: 1em;
+
+button, label{
+  display: block;
 }
-button{
-  margin: 1em;
-  padding: 1em;
-} */
+input {
+  appearance: none;
+
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  top: 4px;
+
+  border: 2px solid #999;
+  transition: 0.2s all linear;
+  outline: none;
+}
+input:checked {
+  border: 6px solid black;
+}
 
 section {
-    font: normal 1em/1.4 helvetica;
+  font: normal 1em/1.4 helvetica;
   max-width: 28em;
   /* border-radius: 1em; */
   margin: 1em;

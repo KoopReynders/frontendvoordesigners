@@ -10,12 +10,25 @@
   <body>
     <header>
       <h1>load html in section</h1>
-      <button type="button" name="button">load external html file</button>
-      <a href="https://koopreynders.github.io/frontendvoordesigners/opdracht3/PE/data.html">Dit HTML file</a>
+
+      <form>
+        <p>selecteer het file dat geladen moet worden.</p>
+        <label>
+          <input checked type="radio" name="link" value="https://koopreynders.github.io/frontendvoordesigners/opdracht3/PE/data.html">
+          Html met h1 en p. <a href="https://koopreynders.github.io/frontendvoordesigners/opdracht3/PE/data.html">data.html</a>
+        </label>
+        <label>
+          <input type="radio" name="link" value="https://koopreynders.github.io/frontendvoordesigners/opdracht3/PE/data2.html">
+          Compleet Html file met body en alles. <a href="https://koopreynders.github.io/frontendvoordesigners/opdracht3/PE/data2.html">data2.html</a>
+        </label>
+
+        <button type="submit">load external html file</button>
+      </form>
+
     </header>
 
     <section>
-      Section waar het HTML file wordt gerenderd. 
+      Section waar het HTML file wordt gerenderd.
     </section>
 
     <script src="script.js"></script>
