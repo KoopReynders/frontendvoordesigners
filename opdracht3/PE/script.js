@@ -1,50 +1,40 @@
 // console.log("script");
 
-var section = document.querySelector('section');
-var button = document.querySelector('button');
-var form = document.querySelector("form");
-//var requestURL = 'data.html';
-var requestURL = 'https://koopreynders.github.io/frontendvoordesigners/opdracht3/PE/data.html';
-var requestURL = 'https://koopreynders.github.io/frontendvoordesigners/opdracht3/PE/data2.html';
+// var dataURL = 'https://koopreynders.github.io/frontendvoordesigners/opdracht3/PE/data.html';
+// var dataURL = 'https://koopreynders.github.io/frontendvoordesigners/opdracht3/PE/data2.html';
+var section = document.querySelector('section'); //section om de html in te laden
+var form = document.querySelector("form"); //formulier met file selectie
 
-
-//button actie; onclick load file en onload render naar section
-// button.addEventListener('click',function(){
-//   section.textContent = "load data";
-//   // console.log('click');
-//   var request = new XMLHttpRequest();
-//   request.open('GET', requestURL);
-//   request.responseType = 'text';
-//   request.send();
-//   request.onload = function() {
-//     var data = request.response;
-//     console.log('request.responseType',request.responseType)
-//     console.log("request.response", data);
-//
-//     section.innerHTML = data;
-//   } //end request.onload
-//
-// }) //end button clicks
-
+/*
+  functie om de data te laden en op de pagina te tonen
+  arg: het data file dat geladen meot worden
+*/
 function loaddata(dataURL){
-  section.textContent = "loading data file";
+  section.textContent = "loading data file"; //loading feedback tonen in section
+
   var request = new XMLHttpRequest();
   request.open('GET', dataURL);
-  request.responseType = 'text';
+  request.responseType = 'text'; //set 'type' als 'text', omdat html wordt geladen
   request.send();
   request.onload = function() {
     var data = request.response;
     console.log('request.responseType',request.responseType)
     console.log("request.response", data);
 
-    section.innerHTML = data;
+    section.innerHTML = data; //property 'innerHTML' gebruiken om data als HTML te laten renderen
   } //end request.onload
-}
+} //end function loaddata
 
+
+/*
+  Submit functie
+*/
 form.addEventListener("submit", function(event) {
-  console.log("form",form);
-  var link = form.elements['link'].value;
+  // console.log("addEventListener",event);
+  var link = form.elements['link'].value; //geselecteerde value uit het form fixen
   console.log("form input value",link);
-  loaddata(link);
+  loaddata(link); //
+
   event.preventDefault(); //dus niet het formulier echt versturen met de submit button
-}, false);
+
+}, false); //end form.addEventListener submit
