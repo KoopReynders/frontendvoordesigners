@@ -12,18 +12,22 @@ var form = document.querySelector("form"); //formulier met file selectie
   arg: het data file dat geladen meot worden
 */
 function loaddata(dataURL){
+  //feedback;
   section.textContent = "loading data file"; //loading feedback tonen in section
+  form.elements["submit"].textContent = "loading ..."; //loading feedback op de submit button
 
+  //ajax:
   var request = new XMLHttpRequest();
   request.open('GET', dataURL);
   request.responseType = 'text'; //set 'type' als 'text', omdat html wordt geladen
   request.send();
   request.onload = function() {
     var data = request.response;
-    console.log('request.responseType',request.responseType)
+    // console.log('request.responseType',request.responseType);
     console.log("request.response", data);
 
     section.innerHTML = data; //property 'innerHTML' gebruiken om data als HTML te laten renderen
+    form.elements["submit"].textContent = "Laad file"; //text op de submit button
   } //end request.onload
 } //end function loaddata
 
