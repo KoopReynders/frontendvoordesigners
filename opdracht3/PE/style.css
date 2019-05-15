@@ -30,11 +30,11 @@ section {
   /* box-shadow: 3px 3px 3px 3px #ccc; */
 }
 footer{
-  background: #ccc;
-  color: #333;
+  background: #eee;
+  color: #666;
   padding: 2em;
   margin: 4em -2em;
 }
 footer a {
-  color: #333;
+  color: #666;
 }
