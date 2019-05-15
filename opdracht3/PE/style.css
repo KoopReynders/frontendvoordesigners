@@ -35,3 +35,6 @@ footer{
   padding: 2em;
   margin: 4em -2em;
 }
+footer a {
+  color: #333;
+}
