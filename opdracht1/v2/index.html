@@ -1,9 +1,34 @@
 <html>
-  <head></head>
+  <head>
+    <title>Object fit</title>
+
+    <style>
+      section {
+        /display: inline-block;
+        background: gold;
+        /padding: 0.2em;
+        max-width: 30em;
+        max-height: 20em;
+        overflow: hidden;
+
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        /object-fit: cover;
+        object-position: 50% 50%;
+        transition: all 0.5s ease;
+      }
+      img:hover{
+        height: 110%;
+        width: 110%;
+      }
+    </style>
+  </head>
   <body>
-    <h1>Opdracht 1 - versie 2</h1>
-    <p>
-      Hier komt de HTML van de interactieve demo te staan voor de tweede versie van de eerste opdracht.
-    </p>
+    <section>
+      <img src="https://static.billygraham.org/sites/billygraham.org/uploads/pro/2013/04/29182247/5-2-God-is-in-Nature-1024x681.jpg" class="object" />
+    </section>
   </body>
+
 </html>
