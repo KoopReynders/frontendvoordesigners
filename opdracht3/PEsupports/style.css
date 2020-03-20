@@ -51,7 +51,7 @@ div#vraag2 {
 }
 
 /* Vraag 3 */
-div {u
+div {
   background: red;
 }
 @supports (scroll-snap-stop: always) {
