@@ -44,14 +44,14 @@ div#vraag1b {
 div#vraag2 {
   background: red;
 }
-@supports (scroll-behaviour: smooth) {
+@supports (scroll-behavior: smooth) {
   div#vraag2 {
     background: blue;
   }
 }
 
 /* Vraag 3 */
-div {u
+div {
   background: red;
 }
 @supports (scroll-snap-stop: always) {
