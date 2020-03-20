@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>PE @supports</title>
+      <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+
+      <header>
+        <h1>PE @supports</h1>
+      </header>
+
+
+    <main>
+        <div id=vraag1a>
+          <pre>
+@supports (display: grid) {
+  div {
+    background: blue;
+  }
+}
+div {
+  background: red;
+}</pre>
+        </div>
+
+        <div id=vraag1b>
+          <pre>
+div {
+  background: red;
+}
+@supports (display: grid) {
+  div {
+    background: blue;
+  }
+}</pre>
+        </div>
+
+        <div id=vraag2>
+          <pre>
+div {
+  background: red;
+}
+@supports (scroll-behaviour) {
+  div {
+    background: blue;
+  }
+}</pre>
+        </div>
+
+        <div id=vraag3>
+          <pre>
+div {
+  background: red;
+}
+@supports (@supports(scroll-snap-stop: always)) {
+  div {
+    background: blue;
+  }
+}
+</pre>
+        </div>
+
+
+    </main>
+
+  </body>
+
+</html>
