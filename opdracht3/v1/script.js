@@ -1,6 +1,9 @@
 var url = "https://koopreynders.github.io/frontendvoordesigners/opdracht3/json/";
 var urlmovies = url+"movies.json";
 
+
+
+//////////////////////////////////////////////
 var sectionmovies = document.querySelector('#movies');
 console.log("section",sectionmovies);
 
@@ -12,7 +15,6 @@ request.responseType = 'json';
 request.send();
 
 request.addEventListener("load", function(){
-  // var data = request.response;
   //er is data
   console.log("request is geladen: ",request.response);
   //nu kun je iets doen
@@ -22,8 +24,8 @@ request.addEventListener("load", function(){
 function renderHTML(data){
   console.log("renderHTML")
   //section.textContent = JSON.stringify(data);
+  //loop door alle nodes van de JSON
   for (var item of data) {
-
     var article = document.createElement('article');
     //film titel
     var title = document.createElement('h2');
@@ -42,6 +44,9 @@ function renderHTML(data){
     sectionmovies.appendChild(article);
   };
 }
+
+
+
 
 
 //////////////////////////////////////////////
@@ -64,9 +69,8 @@ buttonlaadfilm.onclick = function(){
 
   request.addEventListener("load", function(){
     var filmdata = request.response;
+    //er is data:
     console.log(filmdata)
-    //er is data
-
     //film titel
     var title = document.createElement('h2');
     title.textContent = filmdata.title;
