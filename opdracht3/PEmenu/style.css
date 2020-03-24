@@ -10,6 +10,13 @@ body {
   line-height: 140%;
   color: #333;
 }
+main {
+  margin: 0 auto;
+  padding: 1em;
+  max-width: 40em;
+  min-height: 100vh;
+  background: #fff;
+}
 body > header, body > nav{
   background: #333;
   color: #fff;
@@ -19,31 +26,21 @@ body > header, body > nav{
 body > header a, body > nav a{
   color: #fff;
 }
-a#menulink{
+body > header{
   display: inline-block;
-  padding: 0.4em;
-  background: #efefef;
-  color: #000;
-  text-decoration: none;
-  background-image: url("hamburger_icon.png");
-  background-size: 1em 1em;
-  background-repeat: no-repeat;
-  background-position: 0.2em 50%;
-  padding-left: 1.5em;
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-main {
-  margin: 0 auto;
-  padding: 1em;
-  max-width: 40em;
-  min-height: 100vh;
-  background: #fff;
-}
-header {
+main > header {
   background: #eee;
   margin: 0;
   padding: 1em;
 }
-header h1 {
+main > header h1 {
   margin: 0;
   font-size: 4em;
   line-height: 80%;
@@ -63,15 +60,32 @@ footer a {
   color: #333;
 }
 
+a#menulink{
+  /* display: inline-block;  */
+  padding: 0.4em;
+  background: #efefef;
+  color: #000;
+  text-decoration: none;
+  background-image: url("hamburger_icon.png");
+  background-size: 1em 1em;
+  background-repeat: no-repeat;
+  background-position: 0.2em 50%;
+  padding-left: 1.5em;
+}
+a#menulink:hover, a#menulink:focus{
+  border: 0.2em solid gold;
+  margin: -0.2em;
+}
 
 .hamburgesia{
   position: absolute;
-  top: 6em;
+  border-radius: 1em;
+  top: 8em;
   margin-left: -30em;
   transition: margin 0.4s ease-in;
 }
 .showmenu{
-  margin-left: 0;
+  margin-left: 2em;
 }
 
 
