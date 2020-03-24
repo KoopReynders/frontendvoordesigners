@@ -22,30 +22,22 @@ request.addEventListener("load", function(){
 function renderHTML(data){
   console.log("renderHTML")
   //section.textContent = JSON.stringify(data);
+  for (var item of data) {
 
-  for (var i = 0; i < data.length; i++) {
     var article = document.createElement('article');
     //film titel
     var title = document.createElement('h2');
-    title.textContent = data[i].title;
+    title.textContent = item.title;
     //film plot
     var plot = document.createElement('p');
-    plot.textContent = data[i].simple_plot;
+    plot.textContent = item.simple_plot;
     //film poster
     var cover = document.createElement('img');
-    cover.src = data[i].cover;
-    //film trailer
-    // var video = document.createElement('video');
-    // video.src = data[i].trailer;
-    // video.controls = "true";
-    // video.width = "360";
-    // video.poster = data[i].cover;
-
+    cover.src = item.cover;
     //koppel de html elementen aan het <article>
     article.appendChild(title);
     article.appendChild(plot);
     article.appendChild(cover);
-    //article.appendChild(video);
     //koppel de <article> aan de section op de pagina
     sectionmovies.appendChild(article);
   };
