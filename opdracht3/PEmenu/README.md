@@ -2,6 +2,6 @@
 
 CSS @support demo met voorbeeld code.
 
-Kan jij raden wat voor kleur de <pre><div></pre> wordt?
+Kan jij raden wat voor kleur de `<div>` wordt?
 
-[Bekijk de demo hier](index.html)
+[Bekijk de demo hier](https://koopreynders.github.io/frontendvoordesigners/opdracht3/PEmenu/index.html)
