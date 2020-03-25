@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  background: #efefef;
+}
+body {
+  background: #fff;
+  color: #333;
+  max-width: 26em;
+  margin: 0 auto;
+  font-family: Calibri, sans-serif;
+  font-size: 1.1em;
+  line-height: 140%;
+}
+main {
+  margin: 0;
+  padding: 1em 2em;
+}
+header{
+  /* display: inline-block; */
+  /* width: 10em; */
+  /* height: 10em; */
+  background: #ddd;
+  margin: 0;
+  padding: 2em;
+}
+header h1 {
+  margin: 0;
+  font-size: 4em;
+  line-height: 80%;
+}
+h2 {
+  margin: 1em 0;
+}
+
+nav{
+  margin: 0;
+  margin-top: -1.5em;
+  padding: 1em;
+  /* background: pink; */
+  display: flex;
+  justify-content: space-between;
+}
+nav a {
+    display: inline-block;
+    border-radius: 50%;
+    background: #333;
+    color: #fff;
+    width: 5em;
+    height: 5em;
+    text-decoration: none;
+    font-size: 0.8em;
+    text-align: center;
+    padding-top: 1.5em;
+    transition: transform 0.2s ease-in;
+}
+nav a:hover, nav a:focus{
+  border: 0.2em solid gold;
+  transform: scale(1.2);
+}
+
+/*
+hyphens: hypenation
+
+Hoe werkt dit?
+https://css-tricks.com/almanac/properties/h/hyphenate/
+
+sowieso lang zetten op het element.
+lang=en of lang=nl
+en is default?
+
+Chrome en Opera doen niets hiermee
+http://caniuse.com/#search=hyphens
+
+*/
+code{
+  font-size: 1.2em;
+}
+main {
+  /*daar gaan we !*/
+  text-align: justify;
+
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word; /* Non standard for webkit */
+
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+
+}
