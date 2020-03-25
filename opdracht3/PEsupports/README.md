@@ -1,4 +1,4 @@
-# Progressive Enhancment demo @support
+# Progressive Enhancement demo @support
 
 CSS @support demo met voorbeeld code.
 
