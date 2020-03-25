@@ -3,7 +3,9 @@
 //menu clonen
 var menucloon = document.querySelector("#menu").cloneNode(true);
 //het gecloonde menu in de body plaatsen.
-document.querySelector("body").appendChild(menucloon);
+// Insert the new element before the first child
+document.querySelector("body").insertBefore(menucloon, document.querySelector("main"))
+
 //id zetten (anders heb je twee dezelfde id's in de DOM)
 menucloon.id ="menutop";
 //titel overschrijven omdat dit menu boven in de pagina wordt getoond

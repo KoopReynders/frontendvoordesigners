@@ -1,6 +1,8 @@
 console.log(window.XMLHttpRequest);
 
 function loadpage(page){
+  //feature detect
+  //als de browser XMLHttpRequest niet ondersteund wordt de functie niet uitgevoerd
   if (!window.XMLHttpRequest){
     console.log("njet")
     return false;
@@ -9,18 +11,24 @@ function loadpage(page){
   var request = new window.XMLHttpRequest();
   console.log("XMLHttpRequest",request);
   request.open('GET', page);
-  request.responseType = 'text'; //set 'type' als 'text', omdat html wordt geladen
+  //set 'type' als 'text', omdat html wordt geladen
+  request.responseType = 'text';
   request.send();
   request.onload = function() {
-    console.log('request.responseType',request.responseType);
-    console.log("request.response", request.response);
+    //section aanmaken om de request.response in te renderen
+    var section = document.createElement('section');
+    //property 'innerHTML' gebruiken om request.responsce als HTML te laten renderen
+    section.innerHTML = request.response;
+    //het article clonen, anders zitten we met head, title, meta, body, etc ...
+    var article = section.querySelector("article").cloneNode(true);
+    // article aan de dom toevoegen
+    document.querySelector("main").appendChild(article);
 
-    document.querySelector('main').innerHTML = data; //property 'innerHTML' gebruiken om data als HTML te laten renderen
-    // form.elements["submit"].textContent = "Laad file"; //text op de submit button
-  } //end request.onload
+
+  } //end loadpage
 }
 
-loadpage("article2.html");
+loadpage("https://koopreynders.github.io/frontendvoordesigners/opdracht3/PEmetXHR/article4.html");
 
 // /*
 //   variabelen:
