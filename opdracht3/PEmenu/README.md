@@ -1,7 +1,7 @@
-# Progressive Enhancment demo @support
+# Progressive Enhancment fancy menu demo
 
-CSS @support demo met voorbeeld code.
+Fancy menu demo met voorbeeld code.
 
-Kan jij raden wat voor kleur de `<div>` wordt?
+Als een browser javascript heeft, dan wordt een fance menu getoond. 
 
 [Bekijk de demo hier](https://koopreynders.github.io/frontendvoordesigners/opdracht3/PEmenu/index.html)
