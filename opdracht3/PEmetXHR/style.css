@@ -83,7 +83,9 @@ nav a:hover, nav a:focus{
   border: 0.2em solid gold;
   transform: scale(1.2);
 }
-
+.disabled{
+  visibility: hidden;
+}
 
 /*
 hyphens: hypenation
