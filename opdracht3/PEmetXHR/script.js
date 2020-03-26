@@ -1,13 +1,14 @@
-//INit en declaraties
+//declaraties
 //knoppen
 var next = document.querySelector("a[rel='next']");
 var prev = document.querySelector("a[rel='prev']");
 var current = 0; //eerste pagina, index = 0
+var url = ""
 var pages = [
-      "./index.html",
-      "./article2.html",
-      "./article3.html",
-      "./article4.html"
+      "https://koopreynders.github.io/frontendvoordesigners/opdracht3/PEmetXHR/index.html",
+      "https://koopreynders.github.io/frontendvoordesigners/opdracht3/PEmetXHR/article2.html",
+      "https://koopreynders.github.io/frontendvoordesigners/opdracht3/PEmetXHR/article3.html",
+      "https://koopreynders.github.io/frontendvoordesigners/opdracht3/PEmetXHR/article4.html"
     ];
 
 /*
@@ -22,11 +23,13 @@ function setupXHR(){
   if (!window.XMLHttpRequest){
     console.log("XHR wordt niet ondersteund")
     //De functie wordt afgebroken
-    return false; //dat is prima want de html doet het nog steeds
+    //dat is prima want de html doet het nog steeds
+    return false;
    }
    //Als de feature bestaat, dan worden de click events overschreven.
    next.onclick = function(){
      event.preventDefault();
+
      current+=1;
      if(document.querySelector("article[data-nr='"+current+"']")){
        shownext();
@@ -36,10 +39,12 @@ function setupXHR(){
    }
    prev.onclick = function(){
      event.preventDefault();
+
      current-=1
      shownext();
    }
 }
+
 /*
 loadnext
 Met AJAX de volgende pagina laden en aan de DOM toevoegen.
@@ -58,10 +63,11 @@ function loadnext(){
     shownext();
   }
   request.open('GET', pages[current]);
-  //set 'type' als 'document', omdat html wordt geladen
+  //set 'type' als 'document' om html documenten te laden
   request.responseType = 'document';
   request.send();
 }
+
 /*
 shownext
 Het niewe artikel met een fancy animatie tonen.
@@ -71,13 +77,11 @@ function shownext(){
   document.querySelector("article:first-child").style.setProperty("--margin", current);
   //buttons aan/uit zetten
   if(current==pages.length-1){
-    //current = pages.length-1;
     next.classList.add('disabled');
   }else{
     next.classList.remove('disabled');
   }
   if(current>0){
-    //current = pages.length-1;
     prev.classList.remove('disabled');
   }else{
     prev.classList.add('disabled');
