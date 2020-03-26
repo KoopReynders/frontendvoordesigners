@@ -1,3 +1,6 @@
+:root {
+  --margin: 0;
+}
 * {
   box-sizing: border-box;
 }
@@ -8,20 +11,16 @@ html {
 body {
   background: #fff;
   color: #333;
-  max-width: 26em;
-  margin: 0 auto;
   font-family: Calibri, sans-serif;
   font-size: 1.1em;
   line-height: 140%;
-}
-main {
-  margin: 0;
-  padding: 1em 2em;
+
+  max-width: 26em;
+  margin: 0 auto;
+  /* overflow-x: hidden; */
+  /* background: violet; */
 }
 header{
-  /* display: inline-block; */
-  /* width: 10em; */
-  /* height: 10em; */
   background: #ddd;
   margin: 0;
   padding: 2em;
@@ -35,11 +34,35 @@ h2 {
   margin: 1em 0;
 }
 
+
+main {
+  position: relative;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  /* white-space: nowrap; */
+  overflow-x: hidden;
+}
+article{
+  /* position: absolute; */
+  flex-shrink: 0;
+  max-width: 26em;
+  margin: 0;
+  padding: 1em 2em;
+  transition: margin 1s ease-in;
+  /* background: pink; */
+}
+article:first-child{
+  margin-left: calc(var(--margin)*-26em);
+  /* left: 26em; */
+}
+
+
 nav{
   margin: 0;
   margin-top: -1.5em;
   padding: 1em;
-  /* background: pink; */
   display: flex;
   justify-content: space-between;
 }
@@ -60,6 +83,7 @@ nav a:hover, nav a:focus{
   border: 0.2em solid gold;
   transform: scale(1.2);
 }
+
 
 /*
 hyphens: hypenation

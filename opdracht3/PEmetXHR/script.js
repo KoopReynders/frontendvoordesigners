@@ -1,34 +1,65 @@
-console.log(window.XMLHttpRequest);
+//knoppen
+var next = document.querySelector("a[rel='next']");
+var prev = document.querySelector("a[rel='prev']");
 
-function loadpage(page){
-  //feature detect
-  //als de browser XMLHttpRequest niet ondersteund wordt de functie niet uitgevoerd
-  if (!window.XMLHttpRequest){
-    console.log("njet")
-    return false;
-   }
+var current = 0; //eerste pagina, index = 0
+var pages = [
+      "https://koopreynders.github.io/frontendvoordesigners/opdracht3/PEmetXHR/index.html",
+      "https://koopreynders.github.io/frontendvoordesigners/opdracht3/PEmetXHR/article2.html",
+      "https://koopreynders.github.io/frontendvoordesigners/opdracht3/PEmetXHR/article3.html",
+      "https://koopreynders.github.io/frontendvoordesigners/opdracht3/PEmetXHR/article4.html"
+    ];
 
-  var request = new window.XMLHttpRequest();
-  console.log("XMLHttpRequest",request);
-  request.open('GET', page);
-  //set 'type' als 'text', omdat html wordt geladen
-  request.responseType = 'text';
-  request.send();
+function loadnext(page){
+  //request opzetten
+  var request = new XMLHttpRequest();
+  // console.log("XMLHttpRequest",request);
   request.onload = function() {
-    //section aanmaken om de request.response in te renderen
-    var section = document.createElement('section');
-    //property 'innerHTML' gebruiken om request.responsce als HTML te laten renderen
-    section.innerHTML = request.response;
-    //het article clonen, anders zitten we met head, title, meta, body, etc ...
-    var article = section.querySelector("article").cloneNode(true);
+    //alleen het article selecteren van de request.response (en niet de hele html met head en body)
+    var article = request.response.querySelector("article");
+    article.setAttribute("data-current",current);
     // article aan de dom toevoegen
     document.querySelector("main").appendChild(article);
+    //als het artikel is geplaatst, animeren:
+    shownext();
+  }
+  request.open('GET', page);
+  //set 'type' als 'text', omdat html wordt geladen
+  request.responseType = 'document';
+  request.send();
+}
+function shownext(){
+  //margin-left van het eerste artikel aanpassen
+  document.querySelector("article:first-child").style.setProperty("--margin", current);
+  //buttons disablen
 
-
-  } //end loadpage
+}
+function setupXHR(){
+  //feature detect
+  //als de browser XHR niet ondersteunt, stopt de functie
+  console.log(window.XMLHttpRequest);
+  if (!window.XMLHttpRequest){
+    console.log("XHR wordt niet ondersteund")
+    //De functie wordt afgebroken
+    return false; //dat is prima want de html doet het nog steeds
+   }
+   next.onclick = function(){
+     event.preventDefault();
+     console.dir(this);
+     //console.log("page",pages[current()+1]);
+     current+=1
+     loadnext(pages[current]);
+   }
+   prev.onclick = function(){
+     event.preventDefault();
+     current-=1
+     shownext();
+   }
 }
 
-loadpage("https://koopreynders.github.io/frontendvoordesigners/opdracht3/PEmetXHR/article4.html");
+setupXHR();
+
+// shownext("https://koopreynders.github.io/frontendvoordesigners/opdracht3/PEmetXHR/article4.html");
 
 // /*
 //   variabelen:

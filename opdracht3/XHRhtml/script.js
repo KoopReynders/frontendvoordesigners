@@ -18,17 +18,15 @@ function loaddata(dataURL){
 
   //ajax:
   var request = new XMLHttpRequest();
-  request.open('GET', dataURL);
-  request.responseType = 'text'; //set 'type' als 'text', omdat html wordt geladen
-  request.send();
   request.onload = function() {
-    var data = request.response;
-    // console.log('request.responseType',request.responseType);
-    console.log("request.response", data);
-
-    section.innerHTML = data; //property 'innerHTML' gebruiken om data als HTML te laten renderen
-    form.elements["submit"].textContent = "Laad file"; //text op de submit button
+    var data = request.response.querySelector("body");
+    section.textContent = "";
+    section.appendChild(data);
+    form.elements["submit"].textContent = "Laad file"; //text op de submit button terugzetten
   } //end request.onload
+  request.open('GET', dataURL);
+  request.responseType = 'document'; //set 'responseType=document', omdat html wordt geladen
+  request.send();
 } //end function loaddata
 
 
