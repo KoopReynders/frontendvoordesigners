@@ -28,7 +28,11 @@ function setupXHR(){
    next.onclick = function(){
      event.preventDefault();
      current+=1;
-     loadnext();
+     if(document.querySelector("article[data-nr='"+current+"']")){
+       shownext();
+     }else{
+       loadnext();
+     }
    }
    prev.onclick = function(){
      event.preventDefault();
