@@ -4,10 +4,10 @@ var next = document.querySelector("a[rel='next']");
 var prev = document.querySelector("a[rel='prev']");
 var current = 0; //eerste pagina, index = 0
 var pages = [
-      "https://koopreynders.github.io/frontendvoordesigners/opdracht3/PEmetXHR/index.html",
-      "https://koopreynders.github.io/frontendvoordesigners/opdracht3/PEmetXHR/article2.html",
-      "https://koopreynders.github.io/frontendvoordesigners/opdracht3/PEmetXHR/article3.html",
-      "https://koopreynders.github.io/frontendvoordesigners/opdracht3/PEmetXHR/article4.html"
+      "./index.html",
+      "./article2.html",
+      "./article3.html",
+      "./article4.html"
     ];
 
 /*
