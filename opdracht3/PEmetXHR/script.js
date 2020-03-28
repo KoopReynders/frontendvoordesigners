@@ -15,7 +15,7 @@ var pages = [
 setupXHR
 feature detect of de browser XHR ondersteunt.
 Zo ja, dan worden de click events van prev/next overschreven.
-Zo nee, dan wordt de functie afgebroeken en doet de pagina het met gewonen html.
+Zo nee, dan wordt de functie afgebroeken en doet de pagina het met html.
 */
 function setupXHR(){
   //feature detect
@@ -54,7 +54,8 @@ function loadnext(){
   var request = new XMLHttpRequest();
   // console.log("XMLHttpRequest",request);
   request.onload = function() {
-    //alleen het article selecteren van de request.response (en niet de hele html met head en body)
+    //alleen het article selecteren van de request.response
+    //(en niet de hele html met head en body)
     var article = request.response.querySelector("article");
     article.setAttribute("data-nr",current);
     // article aan de dom toevoegen
