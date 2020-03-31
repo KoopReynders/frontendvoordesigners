@@ -1,4 +1,4 @@
-# Progressive Enhancement fancy menu demo
+# Progressive Enhancement: Fancy menu demo
 
 Fancy menu demo met voorbeeld code.
 
