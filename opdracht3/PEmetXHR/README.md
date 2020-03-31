@@ -1,4 +1,4 @@
-# Progressive Enhancement articles laden met XHR
+# Progressive Enhancement: HTML pagina's laden met XHR
 
 XHR demo met voorbeeld code.
 
