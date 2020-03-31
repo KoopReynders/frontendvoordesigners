@@ -2,7 +2,10 @@
 //knoppen
 var next = document.querySelector("a[rel='next']");
 var prev = document.querySelector("a[rel='prev']");
-var current = 0; //eerste pagina, index.html = 0
+//counter bijhouden om te weten welke pagina getoond moet worden
+//eerste pagina, index.html = 0
+var current = 0;
+//alle pagina's die geladen moeten worden staan klaar in een array
 var pages = [
       "https://koopreynders.github.io/frontendvoordesigners/opdracht3/PEmetXHR/index.html",
       "https://koopreynders.github.io/frontendvoordesigners/opdracht3/PEmetXHR/article2.html",
