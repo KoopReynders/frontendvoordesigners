@@ -2,8 +2,7 @@
 //knoppen
 var next = document.querySelector("a[rel='next']");
 var prev = document.querySelector("a[rel='prev']");
-var current = 0; //eerste pagina, index = 0
-var url = ""
+var current = 0; //eerste pagina, index.html = 0
 var pages = [
       "https://koopreynders.github.io/frontendvoordesigners/opdracht3/PEmetXHR/index.html",
       "https://koopreynders.github.io/frontendvoordesigners/opdracht3/PEmetXHR/article2.html",
@@ -18,29 +17,30 @@ Zo ja, dan worden de click events van prev/next overschreven.
 Zo nee, dan wordt de functie afgebroeken en doet de pagina het met html.
 */
 function setupXHR(){
-  //feature detect
-  //als de browser XHR niet ondersteunt stopt de functie
+  //feature detect: als de browser XHR niet ondersteunt stopt de functie
   if (!window.XMLHttpRequest){
     console.log("XHR wordt niet ondersteund")
-    //De functie wordt afgebroken
-    //dat is prima want de html doet het nog steeds
+    //De functie wordt afgebroken (dat is prima want de html doet het gewoon)
     return false;
    }
-   //Als de feature bestaat, dan worden de click events overschreven.
+   //Als de feature bestaat, worden de click events overschreven.
    next.onclick = function(){
      event.preventDefault();
-
+     //counter bijhouden om te weten welke pagina ingeladen moet worden
      current+=1;
      if(document.querySelector("article[data-nr='"+current+"']")){
+       //als de pagina al is ingeladen, dan hoeft allen de pagina getoond te worden
        shownext();
      }else{
+       //pagina laden
        loadnext();
      }
    }
    prev.onclick = function(){
      event.preventDefault();
-
+     //counter bijhouden om te weten welke pagina getoond moet worden
      current-=1
+     //toon de pagina
      shownext();
    }
 }
@@ -52,17 +52,17 @@ Met AJAX de volgende pagina laden en aan de DOM toevoegen.
 function loadnext(){
   //request opzetten
   var request = new XMLHttpRequest();
-  // console.log("XMLHttpRequest",request);
   request.onload = function() {
     //alleen het article selecteren van de request.response
-    //(en niet de hele html met head en body)
+    //en niet de hele html met head en body
     var article = request.response.querySelector("article");
     article.setAttribute("data-nr",current);
     // article aan de dom toevoegen
     document.querySelector("main").appendChild(article);
-    //als het artikel is geplaatst, animeren:
+    //als het artikel is geplaatst, pagina tonen
     shownext();
   }
+  //De counter wordt gebruikt om de juiste pagina te laden
   request.open('GET', pages[current]);
   //set 'type' als 'document' om html documenten te laden
   request.responseType = 'document';
@@ -71,7 +71,7 @@ function loadnext(){
 
 /*
 shownext
-Het niewe artikel met een fancy animatie tonen.
+Het nieuwe artikel met een fancy animatie tonen.
 */
 function shownext(){
   //margin-left van het eerste artikel aanpassen
