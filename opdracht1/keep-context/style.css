@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+}
+body{
+  margin:0;
+  padding-top: 1em;
+}
+main{
+  overflow-x: scroll;
+  scroll-snap-type: mandatory;
+  xscroll-snap-destination: 0% 100%;
+  xscroll-snap-points-x: repeat(100%);
+}
+.smooth{
+    scroll-behavior: smooth;
+}
+
+/* foto's */
+ol{
+  position: relative;
+  left: 0;
+  transition: all 1s ease;
+  font: 2em/1 helvetica;
+  color: darkgreen;
+  margin: 0;
+  padding: 0;
+  width: calc(7*640px);
+  list-style: none;
+  xbackground: LIGHTCORAL;
+  display: flex;
+}
+li{
+  scroll-snap-align: start;
+  xbackground: DARKSEAGREEN;
+  width: 640px;
+  height: 420px;
+  overflow-y: hidden;
+  padding: 0;
+  margin: 0;
+}
+li img{
+  width: 100%;
+}
+
+
+/* *************** */
+nav{
+  xposition: absolute;
+  bottom: 1em;
+
+  display: flex;
+  justify-content: space-between;
+  background: #efefef;
+  xheight: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 1em;
+}
+button{
+  font: 1em/1 helvetica;
+  padding: 0.6em;
+  xcolor: darkred;
+  xbackground: grey;
+}
+button:hover{
+  cursor:pointer;
+}
+label{
+  font: 1em/1 helvetica;
+  display: block;
+}

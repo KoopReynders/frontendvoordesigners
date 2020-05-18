@@ -1,0 +1,105 @@
+body{
+  font: 1.2em/1 helvetica;
+}
+
+/* NAV */
+nav{
+/*   display: flex;
+  justify-content: space-between; */
+}
+button{
+  display: none;
+}
+button[value='all'], p{
+  display: inline-block;
+  margin: 1em;
+  padding: 0.6em;
+}
+
+/* KAARTJES */
+/* MAIN */
+main{
+
+}
+.show{
+  display: block;
+}
+.hide{
+/*   display: none; */
+/*   height: 0; */
+/*   visibility: collapse; */
+  opacity: 0.2;
+/*   height: 0px; */
+/*   margin-top: -10em; */
+  margin-left: -20em;
+/*   transform: translate(-200px, -100px); */
+}
+.delete{
+  display:none;
+}
+
+/* ul en li items */
+ul{
+  padding: 1em;
+/*   display: inline-grid; */
+/*   columns: 10em;
+  column-gap: 0.8em; */
+  display: flex;
+/*   justify-content: space-around; */
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+li{
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  list-style: none;
+/*   display: inline-block; */
+/*   vertical-align: top; */
+/*   float: left; */
+/* -webkit-column-break-inside: avoid;
+          page-break-inside: avoid;
+               break-inside: avoid; */
+}
+div{
+  margin: 0.5em;
+  padding: 0.5em;
+  width: 10em;
+  height: 5em;
+  transition: all 1s ease-in;
+}
+
+
+
+/* colors */
+.green{
+  background: DARKSEAGREEN;
+  color: DARKSEAGREEN;
+  width: 260px;
+}
+.red{
+  background: LIGHTCORAL;
+  color: LIGHTCORAL;
+  width: 150px;
+}
+.blue{
+  background: THISTLE;
+  color: THISTLE;
+  width: 170px
+}
+.purple{
+  background: purple;
+  color: purple;
+  width:190px;
+}
+.pink{
+  background: pink;
+  color: pink;
+  width: 120px;
+}
+.orange{
+  background: orange;
+  color: orange;
+  width: 220px;
+}

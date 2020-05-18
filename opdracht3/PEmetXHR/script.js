@@ -28,24 +28,25 @@ function setupXHR(){
    }
    //Als de feature bestaat, worden de click events overschreven.
    next.onclick = function(){
-     event.preventDefault();
      //counter bijhouden om te weten welke pagina ingeladen moet worden
      current+=1;
      if(document.querySelector("article[data-nr='"+current+"']")){
-       //als de pagina al is ingeladen, dan hoeft allen de pagina getoond te worden
+       //als het article al bestaat, is depagina al ingeladen, dan hoeft allen de pagina getoond te worden
        shownext();
      }else{
-       //pagina laden
+       //pagina laden als het article nog niet bestaat
        loadnext();
      }
+     event.preventDefault();
    }
    prev.onclick = function(){
-     event.preventDefault();
      //counter bijhouden om te weten welke pagina getoond moet worden
      current-=1
      //toon de pagina
      shownext();
+     event.preventDefault();
    }
+
 }
 
 /*
@@ -59,6 +60,7 @@ function loadnext(){
     //alleen het article selecteren van de request.response
     //en niet de hele html met head en body
     var article = request.response.querySelector("article");
+    //elke article een data-nr
     article.setAttribute("data-nr",current);
     // article aan de dom toevoegen
     document.querySelector("main").appendChild(article);
